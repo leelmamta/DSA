@@ -3,7 +3,7 @@ using namespace std;
 int N = 5;
 
 /**
- * Create tree with generic Nodes - We can initialized the nodes accordingly
+ * Create a treeNode (generic) class
  */
 class TreeNode {
   public:
@@ -13,6 +13,11 @@ class TreeNode {
     TreeNode(int data) : data(data), children(N, nullptr) {}
 };
 
+/**
+ * Print the tree with levels from the root node
+ * @param root
+ * @param level
+ */
 void printTree(TreeNode* root, int level = 0) {
     if (!root) return;
     cout << string(level * 2, ' ') << root->data << endl;
@@ -21,7 +26,10 @@ void printTree(TreeNode* root, int level = 0) {
     }
 }
 
-
+/**
+ * Create generic tree from the terminal
+ * @return TreeNode
+ */
 TreeNode* createTree() {
     cout<<"Enter root data:"<<endl;
     int data;
